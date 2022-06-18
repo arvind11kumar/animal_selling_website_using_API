@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>animal sound webpage api</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+    <script >
+
+        
+
+
+
+// animal dog , elephant , tiger, eligater ,human , cat , goat , cow ,buffalo , pig ,hen ,mouse ,fox;
+// [{
+//           name: "test",
+//           year: 2020,
+// 	Budget: 50,
+// 	Rating:5,
+//            Cast: ['adf'],
+// 	Reviews:['Good'],
+// 	Language:'Hindi',
+// }]
+const array=[{
+            id:1,
+            name:"dog",
+            image:"./apiAnimalsound/dog.jpg",
+            sound:"./sound/mixkit-dog-barking-twice-1.wav"
+        },{
+            id:2,
+            name:"elephant",
+            image:"./apiAnimalsound/elephant.jpg",
+            sound:"./apiAnimalsound/elephant"
+        },{
+            id:3,
+            name:"tiger",
+            image:"./apiAnimalsound/tiger.jpg",
+            sound:"/apiAnimalsound/tiger.mp3"  
+        },{
+            id:4,
+            name:"eligater",
+            image:"./apiAnimalsound/aligater.jpg",
+            sound:"./apiAnimalsound/elephant-30616.mp3"
+        },{
+            id:5,
+            name:"human",// human ==horse
+            image:"./apiAnimalsound/human.jpg",
+            sound:"./apiAnimalsound/baby_human.mp3"   
+        }, {
+            id:6,
+            name:"cat",
+            image:"./apiAnimalsound/cat.jpg",
+            sound:"./apiAnimalsound/cat.wav"
+        },{
+            id:7,
+            name:"goat",
+            image:"./apiAnimalsound/goat.jpg",
+            sound:"./apiAnimalsound/Goat-sound-effect.mp3"
+        },{
+            id:8,
+            name:"cow", // animal dog , elephant , tiger, eligater ,human , cat , goat , cow ,buffalo , pig ,hen ,mouse ,fox horse;
+            image:"./apiAnimalsound/cow.jpg",
+            sound:"./apiAnimalsound/cow.mpeg"
+        },{
+            id:9,
+            name:"buffalo",
+            image:"./apiAnimalsound/buffalo.jpg",
+            sound:"./apiAnimalsound/3DUMFVX-cow.mp3"
+        },{
+            id:10,
+            name:"pig",
+            image:"./apiAnimalsound/pig.jpg",
+            sound:"./apiAnimalsound/pig_sound.mp3"      
+         },{
+            id:11,
+            name:"Hen",
+            image:"./apiAnimalsound/chicken.jpg",
+            sound:"./apiAnimalsound/hen.mpeg"
+        },{
+            id:12,
+            name:"mouse",
+            image:"./apiAnimalsound/mouse.jpg",
+            sound:"./apiAnimalsound/rat_sound.mp3"   
+        },{
+            id:13,
+            name:"FOX",
+            image:"./apiAnimalsound/fox.jpg",
+            sound:"./apiAnimalsound/wolves1.wav"
+        },{
+            id:14,
+            name:"hourse",
+            image:"./apiAnimalsound/horse.jpg",
+            sound:"./apiAnimalsound/Horse-Angry-Neigh-And-Breathing-www.fesliyanstudios.com.mp3"
+        }]
+
+
+
+    </script>
+<style>
+    .outer{
+        border: 1px solid black;
+       
+      
+    }
+     .outer_name{
+        display: flex;
+        flex-wrap: wrap;
+
+        justify-content: center;
+       
+        
+    } 
+.one_div{
+    border: 1px solid black;
+    margin: 10px;
+    border-radius: 11px;
+    flex-wrap: wrap;
+    width: 250px;
+}
+.create_image{
+    height: 200px;
+    width: 250px;
+}
+.btn{
+    font: size 100px;;
+    font-weight: bold;
+    color: green;
+    margin-left: 30%;
+    height: 30px;
+    margin-bottom: 4px;
+    margin-top: 5px;
+    width: 100px;
+    border-radius: 22px;
+
+}
+.btn:hover{
+    background-color: greenyellow;
+}
+
+</style>
+
+</head>
+<body>
+    <h1>animal sound</h1>
+    <div class="outer">   
+    <div class="outer_name">
+        
+    </div>   
+</div>
+
+
+<script>
+   let outer_name=document.querySelector(".outer_name");
+  
+   array.forEach((e)=>{
+
+       let audio_tag=document.createElement("audio");
+       audio_tag.setAttribute("src",e.sound);
+       audio_tag.setAttribute("class","audio_class");
+       let btn=document.createElement("button");
+       btn.innerHTML="BUY_NOW";
+       btn.setAttribute("class","btn")
+     let one_div =document.createElement("div");
+     one_div.setAttribute("class","one_div")
+    let h3tag=document.createElement("h3");
+      let create_image =document.createElement("img")
+      create_image.setAttribute("src",e.image);
+      create_image.setAttribute("class","create_image")
+
+   h3tag.innerHTML=e.name +"and "+e.id;
+   outer_name.appendChild(one_div);
+   one_div.appendChild(h3tag);
+   one_div.append(create_image);
+   one_div.appendChild(btn);
+
+
+
+   create_image.addEventListener("click",()=>{
+    audio_tag.pause();
+    audio_tag.play();
+   })
+
+   })
+   
+   
+</script>
+
+
+</body>
+</html>
+
+
+
+<!-- Problem: Create a web application to display movies with following data stored in static array?
+[{
+          name: "test",
+          year: 2020,
+	Budget: 50,
+	Rating:5,
+           Cast: ['adf'],
+	Reviews:['Good'],
+	Language:'Hindi',
+}] -->
